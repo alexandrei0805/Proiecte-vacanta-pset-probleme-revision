@@ -94,3 +94,26 @@ int a = get_int("Number: ");
     
 }
 ```
+Am incercat sa fac o bucata de cod pentru Mastercard dar nu prea cred ca mi-a iesit.
+Si aceasta problema a fost destul de grea daca o gandeam algoritmic.
+
+
+A treia problema:`Mario-first`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+
+int main(void)
+{
+for(int i=0;i<8;i++)
+    {
+        printf("\n");
+        for(int i = 0;i<8;i++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+    
+}
+```
