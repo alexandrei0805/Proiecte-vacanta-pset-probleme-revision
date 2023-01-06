@@ -70,3 +70,5 @@ int calculate_pennies(int cents)
     // TO BE CODDED
     return 0;
 ```    
+```Nu am reusit sa implementez tot codul.Acesta este cel ajutator dat de dumneavoastra.```
+`Mi s-a parut o problema foarte grea din cauza valorilor monedelor si numarul lor.`
