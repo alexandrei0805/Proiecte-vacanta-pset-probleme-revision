@@ -70,5 +70,27 @@ int calculate_pennies(int cents)
     // TO BE CODDED
     return 0;
 ```    
-```Nu am reusit sa implementez tot codul.Acesta este cel ajutator dat de dumneavoastra.```
-`Mi s-a parut o problema foarte grea din cauza valorilor monedelor si numarul lor.`
+Nu am reusit sa implementez tot codul.Acesta este cel ajutator dat de dumneavoastra.
+Mi s-a parut o problema foarte grea din cauza valorilor monedelor si numarul lor.
+
+
+A doua problema:`Credit`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+
+int main(void)
+{
+int a = get_int("Number: ");
+    if(a==16)
+    {
+        printf("The number is valid;Mastercard.");
+        
+    }
+    else if(a!=16)
+    {
+        printf("The number is invalid.");
+    }
+    
+}
+```
