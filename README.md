@@ -1198,15 +1198,25 @@ Al doilea fisier:`Learn2`
 
 
 
-#num_1 = '100'
-#num_2 = '200'
+num_1 = '100'
+num_2 = '200'
 
-#num_1 = int(num_1)
-#num_2 = int(num_2)
+num_1 = int(num_1)
+num_2 = int(num_2)
 
-#print(num_1 + num_2)
+print(num_1 + num_2)
 ```
 Si partea de `numere` este cat de cat usoara.Chiar am inteles-o.
+
+
+
+
+
+# PROBLEME REVISION
+>Toate problemele de la `Revision` mi s-au parut grele asa ca nu prea am reusit sa fac ceva
+
+
+Prima problema:`
 
 
 
