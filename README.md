@@ -1,5 +1,6 @@
 # Proiecte-vacanta-pset-probleme-revision
->Nume:Simionov     Prenume:Alex-Andrei     Varsta:12 ani     Scoala:Colegiul National Pedagogic Constantin Bratescu Constanta
+>Nume:Simionov||Prenume:Alex-Andrei||Varsta:12 ani||Scoala:Colegiul National Pedagogic Constantin Bratescu Constanta
+
 # PROBLEM SET 1
 Prima problema:`Cash`
 ```c
