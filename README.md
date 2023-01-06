@@ -117,3 +117,60 @@ for(int i=0;i<8;i++)
     
 }
 ```
+De data aceasta am incercat sa fac jumatatea de piramida dar nu mi-a iesit,reusind sa o fac sub forma de dreptunghi.
+A fost o problema grea din punct de vedere logic incat mi-a iesit cu totul o alta forma.
+
+
+A patra problema:`Maria-second`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+
+int main(void)
+{
+    for(int i=0;i<8;i++)
+    {
+        printf("#\n");
+        if(i==1)
+        {
+            printf("##");
+            for(int i=0;i<8;i++)
+            {
+            if(i==2)
+            {
+                
+                printf("###");
+                
+            }
+                printf("\n");
+            }
+            
+        }
+        printf("\n");
+    }
+    //sau
+    for (int i = 0; i < 1; i++)
+        {
+        printf("#\n");
+        for (int i = 0; i < 2; i++)
+            {
+                printf("#");
+                for (int i = 0; i < 3; i++)
+            {
+                printf("#\n");
+                for (int i = 0; i < 3; i++)
+            {
+                printf("#");       
+                    
+             }
+          
+    
+           }
+           printf("\n");
+        
+       }
+}
+}
+```
+Am reusit sa fac un fel de piramida doar ca este pe verticala.
+Mi s-a parut o problema de nivel mediu stiind ca se lega de a treia.Atata timp cat n-am stiut a treia problema,nu aveam cum sa o fac bine si pe aceasta.
