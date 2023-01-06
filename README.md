@@ -857,4 +857,357 @@ A fost si aceasta foarte grea incat mi-au venit greu ideile.
 
 
 
-A treia problema:`
+A treia problema:`Tideman`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+#include <string.h>
+
+
+#define MAX 9
+
+
+int preferences[MAX][MAX];
+
+
+bool locked[MAX][MAX];
+
+
+typedef struct
+{
+    int winner;
+    int loser;
+}
+pair;
+
+
+string candidates[MAX];
+pair pairs[MAX * (MAX - 1) / 2];
+
+int pair_count;
+int candidate_count;
+
+
+bool vote(int rank, string name, int ranks[]);
+bool cycle_pairs(int start, int endCase);
+void record_preferences(int ranks[]);
+void add_pairs(void);
+void sort_pairs(void);
+void lock_pairs(void);
+void print_winner(void);
+
+int main(int argc, string argv[])
+{
+    
+    if (argc < 2)
+    {
+        printf("Usage: tideman [candidate ...]\n");
+        return 1;
+    }
+
+    
+    candidate_count = argc - 1;
+    if (candidate_count > MAX)
+    {
+        printf("Maximum number of candidates is %i\n", MAX);
+        return 2;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        candidates[i] = argv[i + 1];
+    }
+
+    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            locked[i][j] = false;
+        }
+    }
+
+    pair_count = 0;
+    int votercount = get_int("Number of voters: ");
+
+    
+    for (int i = 0; i < votercount; i++)
+    {
+        
+        int ranks[candidate_count];
+
+        
+        for (int j = 0; j < candidate_count; j++)
+        {
+            string name = get_string("Rank %i: ", j + 1);
+
+            if (!vote(j, name, ranks))
+            {
+                printf("Invalid vote.\n");
+                return 3;
+            }
+        }
+
+        record_preferences(ranks);
+        printf("\n");
+    }
+
+
+    add_pairs();
+    sort_pairs();
+    lock_pairs();
+    print_winner();
+    
+    return 0;
+}
+
+
+bool vote(int rank, string name, int ranks[])
+{
+    // TODO
+    for(int i = 0; i < candidate_count; i++){
+
+        if(strcmp(name, candidates[i]) == 0){
+
+            ranks[rank] = i;
+
+            return true;
+
+        }
+
+    }
+
+    return false;
+}
+
+
+void record_preferences(int ranks[])
+{
+    //
+    for(int i = 0; i < candidate_count; i++){
+
+        for(int j = i + 1; j < candidate_count; j++){
+
+            preferences[ranks[i]][ranks[j]]++;
+
+        }
+
+    }
+
+    return;
+}
+
+
+void add_pairs(void)
+{
+    // TODO
+    for(int i = 0; i < candidate_count; i++){
+
+        for(int j = i + 1; j < candidate_count; j++){
+
+            if(preferences[i][j] > preferences[j][i]){
+
+                
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
+                pair_count++;
+
+            } else if(preferences[i][j] < preferences[j][i]){
+
+                
+                pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
+                pair_count++;
+
+            }
+
+        }
+
+    }
+    return;
+}
+
+
+
+void sort_pairs(void)
+{
+    // TODO
+    for(int i = 0; i < pair_count - 1;  i++){
+
+        for(int j = 0; j < pair_count - i - 1; j++){
+
+            if(preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j+1].winner][pairs[j+1].loser]){
+
+                pair temp = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp;
+
+            }
+
+        }
+
+    }
+    return;
+}
+
+bool cycle_pairs(int endCase, int start){
+    
+    if (endCase == start){
+        
+        return true;
+        
+    }
+    
+    for(int i = 0; i < candidate_count; i++){
+        
+        
+        
+        if(locked[endCase][i]){
+            
+            if(cycle_pairs(i, start)){
+                 
+                 return true;
+                 
+            }
+        }
+  
+    }
+    return false;
+}
+
+
+void lock_pairs(void)
+{
+    // TODO
+    for(int i = 0; i < pair_count; i++){
+        
+        if (!cycle_pairs(pairs[i].loser, pairs[i].winner)){
+            
+            locked[pairs[i].winner][pairs[i].loser] = true;
+            
+        }
+        
+    }
+    return;
+}
+
+
+
+void print_winner(void)
+{
+    // TODO
+    for(int i = 0; i < candidate_count; i++){
+        
+        int falseCount = 0;
+        
+        for(int j = 0; j < candidate_count; j++){
+            
+            if(locked[j][i] == false){
+                falseCount++;
+            }
+            
+        }
+        
+        if(falseCount == candidate_count){
+            printf("%s\n", candidates[i]);
+            return;
+        }
+        
+    }
+    return;
+}
+```
+Sper ca am reusit sa fac si aceasta problema.
+A fost o problema foarte grea dar putea avea legatura si cu cele doua de dinainte.
+
+
+
+
+
+# PROIECTE VACANTA
+>In vacanta am incercat sa ma uit la doua tutoriale de Python trimise de dumneavoastra si am testat cate putin din fiecare cod.M-am interesat mai mult de `numere` decat de `print`.
+
+
+Primul fisier:`Learn1`
+```py
+# print('Hello World')
+message = 'Hello World'
+
+print(message)
+```
+Functia de `print` a fost usoara asa ca nu am mai insistat pe ea.
+
+
+Al doilea fisier:`Learn2`
+```py
+#int
+#num = 3
+
+#print(type(num))
+
+#float
+#num = 3.14
+
+#print(type(num))
+
+
+
+#Arithmetic Operators
+# Adition 3 + 2
+# Subtraction 3 - 2
+# Multiplaction 3 * 2
+# Division 3 / 2
+# Floor Division 3 // 2
+# Exponent 3 ** 2
+# Modulus 3 % 2 
+
+#print(3 + 2)
+#print(3 - 2)
+#print(3 * 2)
+#print(3 / 2)
+#print(3 // 2)
+#print(3 ** 2)
+#print(3 % 2)
+
+#print(3*(2+1))
+
+
+#num = 1
+
+#num *= 10 sau num = num * 10
+
+#print(num)
+
+
+# Comparisons
+#Equal 3 == 2
+#Not Equal 3 != 2
+#Greater Than 3 > 2
+#Less Than 3 < 2
+#Greater or Equal 3 >= 2
+#Less or Equal 3 <= 2
+
+#num_1 = 3
+#num_2 = 2
+
+#print(num_1 == num_2)
+
+#num_1 = '100'
+#num_2 = '200'
+
+#print(num_1 + num_2)
+
+
+
+#num_1 = '100'
+#num_2 = '200'
+
+#num_1 = int(num_1)
+#num_2 = int(num_2)
+
+#print(num_1 + num_2)
+```
+Si partea de `numere` este cat de cat usoara.Chiar am inteles-o.
+
+
+
+
