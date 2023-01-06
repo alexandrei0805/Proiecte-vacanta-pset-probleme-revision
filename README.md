@@ -1216,7 +1216,59 @@ Si partea de `numere` este cat de cat usoara.Chiar am inteles-o.
 >Toate problemele de la `Revision` mi s-au parut grele asa ca nu prea am reusit sa fac ceva
 
 
-Prima problema:`
+Prima problema:`Parcauto`
+```c
+#include <stdio.h>
+#include <strcmp.h>
+
+
+typedef struct Masina
+{
+    char* marca;
+    char *model;
+    char tokenMasina[11];
+    char pretAchizitie;
+    char pretVanzare;
+
+}Masina
+
+
+int main(int argc, char *argv[])
+{
+    for(int i<=10 ;)
+
+}
+```
+
+
+A doua problema:`MerryChristmas`
+```c
+#include <stdio.h>
+#include <csbootcamp.h>
+#include <strcmp.h>
+
+
+int main(void)
+{
+    
+}
+```
+
+
+A treia problema:`BankSystem`
+```c
+#include <stdio.h>
+#include <csbootcamp.h>
+#include <strcmp.h>
+
+
+int main(void)
+{
+    
+}
+```
+
+
 
 
 
