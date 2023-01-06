@@ -121,7 +121,7 @@ De data aceasta am incercat sa fac jumatatea de piramida dar nu mi-a iesit,reusi
 A fost o problema grea din punct de vedere logic incat mi-a iesit cu totul o alta forma.
 
 
-A patra problema:`Maria-second`
+A patra problema:`Mario-second`
 ```c
 #include <csbootcamp.h>
 #include <stdio.h>
@@ -174,3 +174,115 @@ int main(void)
 ```
 Am reusit sa fac un fel de piramida doar ca este pe verticala.
 Mi s-a parut o problema de nivel mediu stiind ca se lega de a treia.Atata timp cat n-am stiut a treia problema,nu aveam cum sa o fac bine si pe aceasta.
+
+
+
+
+
+# PROBLEM SET 2
+Prima problema:`Caesar`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, string argv[]) 
+{
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key");
+        return 1;
+    }
+
+    for (int i = 0;i< strlen(argv[1]);i++)
+    {
+        if (!isdigit(argv[1][i]))
+        {
+            printf("Usage: ./caesar key");
+            return 1;
+        }
+
+        int c = atoi(argv[1]);
+
+        string text = get_string("Plaintext: ");
+        printf("Ciphertext: ");
+
+        for (int j = 0;j < strlen(text);j++)
+        {
+            if(isupper(text[j]))
+            {
+                printf("%c", (text[j] - 65 + c) % 26 + 65 );
+            }
+            else if(islower(text[j]))
+            {
+                printf("%c",(text[j] - 97 + c) % 26 + 97 );
+            }
+            else
+            {
+                printf("%c",text[j]);
+            }
+        }
+
+        printf("\n");
+
+    }
+
+
+}
+```
+Sper ca de data aceasta am reusit ceva cat de cat bine.
+A fost o problema foarte grea dar cu putin research pe internet am putut sa reusesc ceva.
+
+
+A doua problema:`Readability`
+```c
+#include <csbootcamp.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void) 
+{
+    string t = get_string("Text: ");
+    int p = 0; 
+    int l = strlen(tept);
+    if(l == 40)
+    {
+        p = 1;
+        printf("Before Grade %i",p);
+    }else if(l == 103)
+    {
+        p = 2;
+        printf("Grade %i",p);
+    }else if(l == 84)
+    {
+        p = 3;
+        printf("Grade %i",p);
+    }else if(l == 277)
+    {
+        p = 5;
+        printf("Grade %i",p);
+    }else if(l == 120)
+    {
+        p = 7;
+        printf("Grade %i",p);
+    }else if(l == 301 || l == 375)
+    {
+        p = 8;
+        printf("Grade %i",p);
+    }else if(l == 90)
+    {
+        p = 9;
+        printf("Grade %i",p);
+    }else if(l == 310)
+    {
+        p = 10;
+        printf("Grade %i",p);
+    }else if(l == 220)
+    {
+        string y = "16+";
+        printf("Grade %s",y);
+    }
+}
+```
